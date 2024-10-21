@@ -547,3 +547,112 @@ To convert the given table into BCNF, we decompose it into three tables:
  * A relation will be in 4NF if it is in Boyce Codd normal form and has no multi-valued dependency.
  * For a dependency A → B, if for a single value of A, multiple values of B exists, then the relation will be a multi-valued dependency.
  
+
+ <table>
+    <thead>
+        <tr>
+            <th>STU_ID</th>
+            <th>COURSE</th>
+            <th>HOBBY</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>21</td>
+            <td>Computer</td>
+            <td>Dancing</td>
+        </tr>
+        <tr>
+            <td>21</td>
+            <td>Math</td>
+            <td>Singing</td>
+        </tr>
+        <tr>
+            <td>34</td>
+            <td>Chemistry</td>
+            <td>Dancing</td>
+        </tr>
+        <tr>
+            <td>74</td>
+            <td>Biology</td>
+            <td>Cricket</td>
+        </tr>
+        <tr>
+            <td>59</td>
+            <td>Physics</td>
+            <td>Hockey</td>
+        </tr>
+    </tbody>
+</table>
+
+The given STUDENT table is in 3NF, but the COURSE and HOBBY are two independent entity. Hence, there is no relationship between COURSE and HOBBY.
+
+In the STUDENT relation, a student with STU_ID, 21 contains two courses, Computer and Math and two hobbies, Dancing and Singing. So there is a Multi-valued dependency on STU_ID, which leads to unnecessary repetition of data.
+
+
+So to make the above table into 4NF, we can decompose it into two tables:
+
+### Student Course
+<table>
+    <thead>
+        <tr>
+            <th>STU_ID</th>
+            <th>COURSE</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>21</td>
+            <td>Computer</td>
+        </tr>
+        <tr>
+            <td>21</td>
+            <td>Math</td>
+        </tr>
+        <tr>
+            <td>34</td>
+            <td>Chemistry</td>
+        </tr>
+        <tr>
+            <td>74</td>
+            <td>Biology</td>
+        </tr>
+        <tr>
+            <td>59</td>
+            <td>Physics</td>
+        </tr>
+    </tbody>
+</table>
+
+### Student Hobby
+
+<table>
+    <thead>
+        <tr>
+            <th>STU_ID</th>
+            <th>HOBBY</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>21</td>
+            <td>Dancing</td>
+        </tr>
+        <tr>
+            <td>21</td>
+            <td>Singing</td>
+        </tr>
+        <tr>
+            <td>34</td>
+            <td>Dancing</td>
+        </tr>
+        <tr>
+            <td>74</td>
+            <td>Cricket</td>
+        </tr>
+        <tr>
+            <td>59</td>
+            <td>Hockey</td>
+        </tr>
+    </tbody>
+</table>
