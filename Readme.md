@@ -29,6 +29,13 @@
  keyword returns all records from the left table (table1), and the matching records from the right table (table2). The result is 0 records from the right side, if there is no match
 </p>
 
+``` sql
+SELECT p.p_id, p.p_name, m.medication_name, m.dosage
+FROM patient_tbl p
+LEFT JOIN medication_tbl m ON p.p_id = m.medication_id;
+
+```
+
 <img src='./Screen shots/left join.png'>
 
 
@@ -38,6 +45,11 @@
  keyword returns all records from the right table (table2), and the matching records from the left table (table1). The result is 0 records from the left side, if there is no match.
 </p>
 
+``` sql
+SELECT p.p_id, p.p_name, m.medication_name, m.dosage
+FROM patient_tbl p
+RIGHT JOIN medication_tbl m ON p.p_id = m.medication_id;
+```
 <img src='./Screen shots/right join.png'>
 
 # Full Join
@@ -46,4 +58,11 @@
   keyword returns all records when there is a match in left (table1) or right (table2) table records.
 </p>
 
+
+``` sql
+SELECT p.p_id, p.p_name, m.medication_name, m.dosage
+FROM patient_tbl p
+FULL OUTER JOIN medication_tbl m ON p.p_id = m.medication_id;
+
+```
 <img src='./Screen shots/full join.png'>
