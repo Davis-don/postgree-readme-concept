@@ -301,7 +301,7 @@ To convert the given table into 2NF, we decompose it into two tables:
 <tr>
 <td>222</td>
 <td>Harray</td>
-<td>201010/td>
+<td>201010</td>
 </tr>
 <tr>
 <td>333</td>
@@ -410,6 +410,138 @@ To convert the given table into 2NF, we decompose it into two tables:
  * BCNF is the advance version of 3NF. It is stricter than 3NF.
 * A table is in BCNF if every functional dependency X → Y, X is the super key of the table.
 * For BCNF, the table should be in 3NF, and for every FD, LHS is super key.
+
+Let's assume there is a company where employees work in more than one department.
+### Employee_table
+<table>
+    <thead>
+        <tr>
+            <th>EMP_ID</th>
+            <th>EMP_COUNTRY</th>
+            <th>EMP_DEPT</th>
+            <th>DEPT_TYPE</th>
+            <th>EMP_DEPT_NO</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>264</td>
+            <td>India</td>
+            <td>Designing</td>
+            <td>D394</td>
+            <td>283</td>
+        </tr>
+        <tr>
+            <td>264</td>
+            <td>India</td>
+            <td>Testing</td>
+            <td>D394</td>
+            <td>300</td>
+        </tr>
+        <tr>
+            <td>364</td>
+            <td>UK</td>
+            <td>Stores</td>
+            <td>D283</td>
+            <td>232</td>
+        </tr>
+        <tr>
+            <td>364</td>
+            <td>UK</td>
+            <td>Developing</td>
+            <td>D283</td>
+            <td>549</td>
+        </tr>
+    </tbody>
+</table>
+
+
+The table is not in BCNF because neither EMP_DEPT nor EMP_ID alone are keys.
+
+To convert the given table into BCNF, we decompose it into three tables:
+
+### Emp coutry Table
+<table>
+    <thead>
+        <tr>
+            <th>EMP_ID</th>
+            <th>EMP_COUNTRY</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>264</td>
+            <td>India</td>
+        </tr>
+        <tr>
+            <td>264</td>
+            <td>India</td>
+        </tr>
+    </tbody>
+</table>
+
+### Emp Dep tbl
+
+<table>
+    <thead>
+        <tr>
+            <th>EMP_DEPT</th>
+            <th>DEPT_TYPE</th>
+            <th>EMP_DEPT_NO</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Designing</td>
+            <td>D394</td>
+            <td>283</td>
+        </tr>
+        <tr>
+            <td>Testing</td>
+            <td>D394</td>
+            <td>300</td>
+        </tr>
+        <tr>
+            <td>Stores</td>
+            <td>D283</td>
+            <td>232</td>
+        </tr>
+        <tr>
+            <td>Developing</td>
+            <td>D283</td>
+            <td>549</td>
+        </tr>
+    </tbody>
+</table>
+
+### Emp_DEPT_MAPPING_TABLE
+
+<table>
+    <thead>
+        <tr>
+            <th>EMP_ID</th>
+            <th>EMP_DEPT</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>283</td>
+            <td>D394</td>
+        </tr>
+        <tr>
+            <td>300</td>
+            <td>D394</td>
+        </tr>
+        <tr>
+            <td>232</td>
+            <td>D283</td>
+        </tr>
+        <tr>
+            <td>549</td>
+            <td>D283</td>
+        </tr>
+    </tbody>
+</table>
 
  ## Fourth Normal Form
  * A relation will be in 4NF if it is in Boyce Codd normal form and has no multi-valued dependency.
