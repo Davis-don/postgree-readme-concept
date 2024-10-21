@@ -34,4 +34,16 @@
 
 # Right Join
 
+<p> The <span style="color:red">Right Join</span> 
+ keyword returns all records from the right table (table2), and the matching records from the left table (table1). The result is 0 records from the left side, if there is no match.
+</p>
+
+<img src='./Screen shots/right join.png'>
+
 # Full Join
+
+<p> The <span style="color:red">Full Join</span> 
+  keyword returns all records when there is a match in left (table1) or right (table2) table records.
+</p>
+
+<img src='./Screen shots/full join.png'>
