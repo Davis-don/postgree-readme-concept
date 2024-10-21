@@ -181,6 +181,106 @@ The decomposition of the EMPLOYEE table into 1NF has been shown below:
 * In the 2NF, relational must be in 1NF.
 * In the second normal form, all non-key attributes are fully functional dependent on the primary key
 
+Let's assume, a school can store the data of teachers and the subjects they teach. In a school, a teacher can teach more than one subject.
+
+<table>
+
+<thead>
+<tr>
+<th>Teacher_id</th>
+<th>Subject</th>
+<th>Teacher_age</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>25</td>
+<td>Chemistry</td>
+<td>30</td>
+</tr>
+<tr>
+<td>25</td>
+<td>Biology</td>
+<td>30</td>
+</tr>
+<tr>
+<td>47</td>
+<td>English</td>
+<td>35</td>
+</tr>
+<tr>
+<td>83</td>
+<td>math</td>
+<td>38</td>
+</tr>
+<tr>
+<td>83</td>
+<td>computer</td>
+<td>38</td>
+</tr>
+</tbody>
+
+</table>
+
+
+To convert the given table into 2NF, we decompose it into two tables:
+### TEACHER_DETAIL table:
+<table>
+<thead>
+<tr>
+<th>Teachers_id</th>
+<th>Teachers_age</th>
+<tr>
+</thead>
+<tbody>
+<tr>
+<td>25</td>
+<td>30</td>
+</tr>
+<tr>
+<td>47</td>
+<td>35</td>
+</tr>
+<tr>
+<td>83</td>
+<td>38</td>
+</tr>
+</tbody>
+</table>
+
+### TEACHER_ID table:
+
+<table>
+<thead>
+<tr>
+<th>Teachers_id</th>
+<th>Subject</th>
+<tr>
+</thead>
+<tbody>
+<tr>
+<td>25</td>
+<td>Chemistry</td>
+</tr>
+<tr>
+<td>25</td>
+<td>Biology</td>
+</tr>
+<tr>
+<td>47</td>
+<td>English</td>
+</tr>
+<tr>
+<td>83</td>
+<td>Mathematics</td>
+</tr>
+<tr>
+<td>83</td>
+<td>Computer</td>
+</tr>
+</tbody>
+</table>
+
  ## Third Normal Form
  * A relation will be in 3NF if it is in 2NF and not contain any transitive partial dependency.
  * 3NF is used to reduce the data duplication. It is also used to achieve the data integrity.
