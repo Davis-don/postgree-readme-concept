@@ -68,6 +68,21 @@ FULL OUTER JOIN medication_tbl m ON p.p_id = m.medication_id;
 <img src='./Screen shots/full join.png'>
 
 # ACID PROPERTIES
+Concept of ACID properties in DBMS is necessary for maintaining data consistency, integrity, and reliability while performing transactions in the database
+
+## Atomicity (A)
+  * By this we mean Either the entire transacton takes place at once or doesn't happen at all
+  
+
+## Consistency (C)
+ * This means that integrity constraints must be maintained so that the database is consistent before and after the transaction. It refers to the correctness of a database.
+
+## Isolation (I)
+
+* Transactions occur independently without interference. Changes occurring in a particular transaction will not be visible to any other transaction until that particular change in that transaction is written to memory or has been committed.
+  
+## Durability (D)
+* This property ensures that once the transaction has completed execution, the updates and modifications to the database are stored in and written to disk and they persist even if a system failure occurs.
 
 # NORMALIZATION
 
