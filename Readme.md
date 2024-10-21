@@ -66,3 +66,14 @@ FULL OUTER JOIN medication_tbl m ON p.p_id = m.medication_id;
 
 ```
 <img src='./Screen shots/full join.png'>
+
+# ACID PROPERTIES
+
+# NORMALIZATION
+
+ ## First Normal Form
+ ## Second Normal Form
+ ## Third Normal Form
+ ## Boyce Codd Normal Form
+ ## Fourth Normal Form
+ 
