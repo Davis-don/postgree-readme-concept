@@ -85,10 +85,28 @@ Concept of ACID properties in DBMS is necessary for maintaining data consistency
 * This property ensures that once the transaction has completed execution, the updates and modifications to the database are stored in and written to disk and they persist even if a system failure occurs.
 
 # NORMALIZATION
+* Normalization is the process of organizing the data in the database.
 
  ## First Normal Form
+* A relation will be 1NF if it contains an atomic value.
+* It states that an attribute of a table cannot hold multiple values. It must hold only single-valued attribute.
+
+
  ## Second Normal Form
+* In the 2NF, relational must be in 1NF.
+* In the second normal form, all non-key attributes are fully functional dependent on the primary key
+
  ## Third Normal Form
+ * A relation will be in 3NF if it is in 2NF and not contain any transitive partial dependency.
+ * 3NF is used to reduce the data duplication. It is also used to achieve the data integrity.
+ * If there is no transitive dependency for non-prime attributes, then the relation must be in third normal form.
+
  ## Boyce Codd Normal Form
+ * BCNF is the advance version of 3NF. It is stricter than 3NF.
+* A table is in BCNF if every functional dependency X → Y, X is the super key of the table.
+* For BCNF, the table should be in 3NF, and for every FD, LHS is super key.
+
  ## Fourth Normal Form
+ * A relation will be in 4NF if it is in Boyce Codd normal form and has no multi-valued dependency.
+ * For a dependency A → B, if for a single value of A, multiple values of B exists, then the relation will be a multi-valued dependency.
  
