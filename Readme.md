@@ -285,6 +285,126 @@ To convert the given table into 2NF, we decompose it into two tables:
  * A relation will be in 3NF if it is in 2NF and not contain any transitive partial dependency.
  * 3NF is used to reduce the data duplication. It is also used to achieve the data integrity.
  * If there is no transitive dependency for non-prime attributes, then the relation must be in third normal form.
+  
+  ### Employee table table:
+
+<table>
+
+<thead>
+<tr>
+<th>Emp_id</th>
+<th>Emp_name</th>
+<th>Emp_zip</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>222</td>
+<td>Harray</td>
+<td>201010/td>
+</tr>
+<tr>
+<td>333</td>
+<td>Stephen</td>
+<td>02228</td>
+</tr>
+<tr>
+<td>444</td>
+<td>Lan</td>
+<td>60007</td>
+</tr>
+<tr>
+<td>555</td>
+<td>Katherine</td>
+<td>06386</td>
+</tr>
+<tr>
+<td>666</td>
+<td>John</td>
+<td>462007</td>
+</tr>
+</tbody>
+
+</table>
+3rd normal form
+
+### Employee table
+
+<table>
+    <thead>
+        <tr>
+            <th>EMP_ID</th>
+            <th>EMP_NAME</th>
+            <th>EMP_ZIP</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>222</td>
+            <td>Harry</td>
+            <td>201010</td>
+        </tr>
+        <tr>
+            <td>333</td>
+            <td>Stephan</td>
+            <td>02228</td>
+        </tr>
+        <tr>
+            <td>444</td>
+            <td>Lan</td>
+            <td>60007</td>
+        </tr>
+        <tr>
+            <td>555</td>
+            <td>Katharine</td>
+            <td>06389</td>
+        </tr>
+        <tr>
+            <td>666</td>
+            <td>John</td>
+            <td>462007</td>
+        </tr>
+    </tbody>
+</table>
+
+### Employee Zip Table
+
+<table>
+    <thead>
+        <tr>
+            <th>EMP_ZIP</th>
+            <th>EMP_STATE</th>
+            <th>EMP_CITY</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>201010</td>
+            <td>UP</td>
+            <td>Noida</td>
+        </tr>
+        <tr>
+            <td>02228</td>
+            <td>US</td>
+            <td>Boston</td>
+        </tr>
+        <tr>
+            <td>60007</td>
+            <td>US</td>
+            <td>Chicago</td>
+        </tr>
+        <tr>
+            <td>06389</td>
+            <td>UK</td>
+            <td>Norwich</td>
+        </tr>
+        <tr>
+            <td>462007</td>
+            <td>MP</td>
+            <td>Bhopal</td>
+        </tr>
+    </tbody>
+</table>
 
  ## Boyce Codd Normal Form
  * BCNF is the advance version of 3NF. It is stricter than 3NF.
