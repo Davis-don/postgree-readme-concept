@@ -25,6 +25,13 @@
 
 # Left Join
 
+<p> The <span style="color:red">LEFT JOIN</span> 
+ keyword returns all records from the left table (table1), and the matching records from the right table (table2). The result is 0 records from the right side, if there is no match
+</p>
+
+<img src='./Screen shots/left join.png'>
+
+
 # Right Join
 
 # Full Join
